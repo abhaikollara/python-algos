@@ -48,14 +48,14 @@ def BFS(graph, start_node, process_func=print):
 
 
 def DFS(graph, start_node, process_func=print):
-    path = set()
+    visited = set()
     stack = [start_node]
     while stack:
         v = stack.pop()
         if v not in path:
             stack.extend([n.vertex for n in graph[v]])
             process_func(v)
-            path.add(v)
+            visited.add(v)
 
 
 
