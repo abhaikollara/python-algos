@@ -1,6 +1,6 @@
 from collections import deque, namedtuple
 
-Vertex = namedtuple("Vertex", ["vertex", "weight"])
+Edge = namedtuple("Edge", ["vertex", "weight"])
 
 class Graph:
 
@@ -19,9 +19,9 @@ class Graph:
     
     def add_edge(self, source, dest, weight=1):
         try:
-            self.adj_list[source].add(Vertex(dest, weight))
+            self.adj_list[source].add(Edge(dest, weight))
             if not self.directed:
-                self.adj_list[dest].add(Vertex(source, weight))
+                self.adj_list[dest].add(Edge(source, weight))
         except KeyError:
             raise ValueError(f"{source} is not a vertex in the graph")
     
