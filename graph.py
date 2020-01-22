@@ -52,7 +52,7 @@ def DFS(graph, start_node, process_func=print):
     stack = [start_node]
     while stack:
         v = stack.pop()
-        if v not in path:
+        if v not in visited:
             stack.extend([n.vertex for n in graph[v]])
             process_func(v)
             visited.add(v)
